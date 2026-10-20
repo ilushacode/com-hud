@@ -35,7 +35,7 @@
 
 ```bash
 # Клонируйте репозиторий
-git clone <URL_ВАШЕГО_РЕПОЗИТОРИЯ>
+git clone https://github.com/ilushacode/com-hud.git
 cd com-hud
 
 # Соберите релизную версию
