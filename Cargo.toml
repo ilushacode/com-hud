@@ -1,0 +1,23 @@
+[package]
+name = "com-hud"
+version = "0.1.0"
+edition = "2021"
+description = "A lightweight, click-through HUD widget for Windows that displays active COM ports."
+license = "MIT"
+
+[dependencies]
+winpane = "0.1.2"
+serialport = "4.9"
+windows = { version = "0.58", features = [
+    "Win32_Devices_DeviceAndDriverInstallation",
+    "Win32_Devices_Properties",
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.release]
+opt-level = "z"     # Оптимизация под размер
+lto = true          # Link Time Optimization
+codegen-units = 1   # Улучшает оптимизацию
+panic = "abort"     # Убирает размотку стека
+strip = true        # Удаляет отладочные символы
